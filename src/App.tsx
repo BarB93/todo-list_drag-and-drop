@@ -3,9 +3,9 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import { TodoItemsList } from './TodoItems';
-import { TodoItemsContextProvider } from './TodoItemsContext';
-import TodoItemForm from './TodoItemForm';
+import { TodoItemsList } from './components/TodoItems';
+import TodoItemForm from './components/TodoItemForm';
+import {TodoContextProvider} from './context/TodoContext'
 
 const theme = createMuiTheme({
     palette: {
@@ -20,11 +20,11 @@ const theme = createMuiTheme({
 
 function App() {
     return (
-        <TodoItemsContextProvider>
+        <TodoContextProvider>
             <ThemeProvider theme={theme}>
                 <Content />
             </ThemeProvider>
-        </TodoItemsContextProvider>
+        </TodoContextProvider>
     );
 }
 

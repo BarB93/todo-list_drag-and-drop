@@ -1,4 +1,10 @@
 import { useCallback } from 'react';
+import classnames from 'classnames';
+import { motion } from 'framer-motion';
+
+import {useTodoContext} from '../hooks/useTodoContext'
+import {TodoItem} from '../types/todoTypes'
+
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
@@ -8,9 +14,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { makeStyles } from '@material-ui/core/styles';
-import classnames from 'classnames';
-import { motion } from 'framer-motion';
-import { TodoItem, useTodoItems } from './TodoItemsContext';
+// import { TodoItem, useTodoItems } from '../TodoItemsContext';
 
 const spring = {
     type: 'spring',
@@ -27,7 +31,7 @@ const useTodoItemListStyles = makeStyles({
 });
 
 export const TodoItemsList = function () {
-    const { todoItems } = useTodoItems();
+    const { todoItems } = useTodoContext();
 
     const classes = useTodoItemListStyles();
 
@@ -67,7 +71,7 @@ const useTodoItemCardStyles = makeStyles({
 
 export const TodoItemCard = function ({ item }: { item: TodoItem }) {
     const classes = useTodoItemCardStyles();
-    const { dispatch } = useTodoItems();
+    const { dispatch } = useTodoContext();
 
     const handleDelete = useCallback(
         () => dispatch({ type: 'delete', data: { id: item.id } }),
