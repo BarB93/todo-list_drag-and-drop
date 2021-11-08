@@ -1,3 +1,7 @@
+export enum TodoActionTypes {
+    Add, LoadState, Delete, toggleDone
+}
+
 export interface TodoItem {
     id: string;
     title: string;
@@ -10,6 +14,6 @@ export interface TodoItemsState {
 }
 
 export interface TodoItemsAction {
-    type: 'loadState' | 'add' | 'delete' | 'toggleDone';
+    type: TodoActionTypes;
     data: any;
 }

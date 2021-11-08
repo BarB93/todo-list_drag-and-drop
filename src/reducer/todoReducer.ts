@@ -1,12 +1,12 @@
 import {generateId} from '../utils/generateId'
-import {TodoItemsAction, TodoItemsState} from '../types/todoTypes'
+import {TodoActionTypes, TodoItemsAction, TodoItemsState} from '../types/todoTypes'
 
 export function todoReducer(state: TodoItemsState, action: TodoItemsAction) {
     switch (action.type) {
-        case 'loadState': {
+        case TodoActionTypes.LoadState: {
             return action.data;
         }
-        case 'add':
+        case TodoActionTypes.Add:
             return {
                 ...state,
                 todoItems: [
@@ -14,14 +14,14 @@ export function todoReducer(state: TodoItemsState, action: TodoItemsAction) {
                     ...state.todoItems,
                 ],
             };
-        case 'delete':
+        case TodoActionTypes.Delete:
             return {
                 ...state,
                 todoItems: state.todoItems.filter(
                     ({ id }) => id !== action.data.id,
                 ),
             };
-        case 'toggleDone':
+        case TodoActionTypes.toggleDone:
             const itemIndex = state.todoItems.findIndex(
                 ({ id }) => id === action.data.id,
             );

@@ -1,5 +1,5 @@
 import {createContext, ReactNode, useEffect, useReducer} from 'react'
-import {TodoItemsAction, TodoItemsState} from '../types/todoTypes'
+import {TodoActionTypes, TodoItemsAction, TodoItemsState} from '../types/todoTypes'
 import {todoReducer} from '../reducer/todoReducer'
 
 export const TodoContext = createContext<
@@ -21,7 +21,8 @@ export const TodoContextProvider = ({
 
         if (savedState) {
             try {
-                dispatch({ type: 'loadState', data: JSON.parse(savedState) });
+                dispatch({ type: TodoActionTypes.LoadState, data: JSON.parse(savedState) });
+                dispatch({ type: TodoActionTypes.LoadState, data: JSON.parse(savedState) });
             } catch {}
         }
     }, []);
