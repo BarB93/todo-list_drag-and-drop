@@ -1,5 +1,48 @@
 export enum TodoActionTypes {
-    Add, LoadState, Delete, toggleDone
+    Add = 'todo/ADD',
+    LoadState = 'todo/LOAD_STATE',
+    Delete = 'todo/DELETE',
+    toggleDone = 'todo/TOGGLE_DONE'
+}
+
+export type TodoContextProviderValue = ({
+    state:TodoState;
+    dispatch: (action: TodoAction) => void;
+} | null)
+
+export interface TodoState {
+    todoItems: TodoItem[];
+}
+
+export interface TodoFormData {
+    title: string
+    details: string
+}
+
+export interface AddTodoAction {
+    type: TodoActionTypes.Add
+    data: {
+        todoItem: TodoFormData
+    }
+}
+
+export interface DeleteTodoAction {
+    type: TodoActionTypes.Delete
+    data: {
+        id: number | string
+    }
+}
+
+export interface ToggleDoneTodoAction {
+    type: TodoActionTypes.toggleDone
+    data: {
+        id: number | string
+    }
+}
+
+export interface LoadStateTodoAction {
+    type: TodoActionTypes.LoadState
+    data: TodoState
 }
 
 export interface TodoItem {
@@ -9,11 +52,9 @@ export interface TodoItem {
     done: boolean;
 }
 
-export interface TodoItemsState {
-    todoItems: TodoItem[];
-}
+export type TodoAction =
+    AddTodoAction
+    | DeleteTodoAction
+    | LoadStateTodoAction
+    | ToggleDoneTodoAction
 
-export interface TodoItemsAction {
-    type: TodoActionTypes;
-    data: any;
-}

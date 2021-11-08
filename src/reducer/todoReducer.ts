@@ -1,12 +1,13 @@
 import {generateId} from '../utils/generateId'
-import {TodoActionTypes, TodoItemsAction, TodoItemsState} from '../types/todoTypes'
+import {TodoActionTypes, TodoAction, TodoState} from '../types/todoTypes'
 
-export function todoReducer(state: TodoItemsState, action: TodoItemsAction) {
+export function todoReducer(state: TodoState, action: TodoAction): TodoState {
     switch (action.type) {
         case TodoActionTypes.LoadState: {
             return action.data;
         }
         case TodoActionTypes.Add:
+
             return {
                 ...state,
                 todoItems: [

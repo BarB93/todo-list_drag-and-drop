@@ -3,7 +3,7 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import {makeStyles} from '@material-ui/core/styles'
 import {useTodoContext} from '../hooks/useTodoContext'
-import {TodoActionTypes} from '../types/todoTypes'
+import {TodoActionTypes, TodoFormData} from '../types/todoTypes'
 
 const useInputStyles = makeStyles(() => ({
     root: {
@@ -18,8 +18,8 @@ export default function TodoItemForm() {
 
     return (
         <form
-            onSubmit={handleSubmit((formData) => {
-                debugger
+            onSubmit={handleSubmit((formData: TodoFormData) => {
+
                 dispatch({ type: TodoActionTypes.Add, data: { todoItem: formData } });
                 reset({ title: '', details: '' });
             })}

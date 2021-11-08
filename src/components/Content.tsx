@@ -1,7 +1,7 @@
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import TodoItemForm from './TodoItemForm'
-import {TodoItemsList} from './TodoItems'
+import {TodoItemsList} from './TodoItemsList'
 import React from 'react'
 
 function Content() {

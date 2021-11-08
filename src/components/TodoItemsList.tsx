@@ -20,7 +20,7 @@ const useTodoItemListStyles = makeStyles({
 });
 
 export const TodoItemsList = function () {
-    const { todoItems } = useTodoContext();
+    const {state:{todoItems}} = useTodoContext();
 
     const classes = useTodoItemListStyles();
 
