@@ -31,6 +31,7 @@ export const TodoContextProvider = ({
     }, []);
 
     useEffect(() => {
+        debugger
         localStorage.setItem(localStorageKey, JSON.stringify(state));
     }, [state]);
 

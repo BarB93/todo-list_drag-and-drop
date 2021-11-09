@@ -1,5 +1,5 @@
 import React from 'react'
-import {Draggable, DraggingStyle, NotDraggingStyle, DraggableProvided} from 'react-beautiful-dnd'
+import {Draggable, DraggingStyle, NotDraggingStyle} from 'react-beautiful-dnd'
 import TodoItemCard from '../TodoItemCard'
 import {TodoItem} from '../../types/todoTypes'
 
@@ -24,7 +24,7 @@ const getItemStyle = (
 
     // styles we need to apply on draggables
     ...draggableStyle,
-    opacity: isDragging? 0.7 : 1,
+    opacity: isDragging? 0.5 : 1,
 
 });
 
