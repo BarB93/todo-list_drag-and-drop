@@ -2,7 +2,8 @@ export enum TodoActionTypes {
     Add = 'todo/ADD',
     LoadState = 'todo/LOAD_STATE',
     Delete = 'todo/DELETE',
-    toggleDone = 'todo/TOGGLE_DONE'
+    ToggleDone = 'todo/TOGGLE_DONE',
+    Update = 'todo/UPDATE',
 }
 
 export type TodoContextProviderValue = ({
@@ -11,7 +12,8 @@ export type TodoContextProviderValue = ({
 } | null)
 
 export interface TodoState {
-    todoItems: TodoItem[];
+    todos: TodoItem[];
+    doneTodos: TodoItem[],
 }
 
 export interface TodoFormData {
@@ -22,7 +24,7 @@ export interface TodoFormData {
 export interface AddTodoAction {
     type: TodoActionTypes.Add
     data: {
-        todoItem: TodoFormData
+        todos: TodoFormData
     }
 }
 
@@ -34,9 +36,16 @@ export interface DeleteTodoAction {
 }
 
 export interface ToggleDoneTodoAction {
-    type: TodoActionTypes.toggleDone
+    type: TodoActionTypes.ToggleDone
     data: {
         id: number | string
+    }
+}
+
+export interface UpdateTodoAction {
+    type: TodoActionTypes.Update
+    data: {
+        todos: TodoItem[];
     }
 }
 
@@ -57,4 +66,5 @@ export type TodoAction =
     | DeleteTodoAction
     | LoadStateTodoAction
     | ToggleDoneTodoAction
+    | UpdateTodoAction
 

@@ -15,10 +15,6 @@ import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 
 const useTodoItemCardStyles = makeStyles({
-    root: {
-        marginTop: 24,
-        marginBottom: 24,
-    },
     doneRoot: {
         textDecoration: 'line-through',
         color: '#888888',
@@ -37,7 +33,7 @@ const TodoItemCard = function ({ item }: { item: TodoItem }) {
     const handleToggleDone = useCallback(
         () =>
             dispatch({
-                type: TodoActionTypes.toggleDone,
+                type: TodoActionTypes.ToggleDone,
                 data: { id: item.id },
             }),
         [item.id, dispatch],
@@ -45,7 +41,7 @@ const TodoItemCard = function ({ item }: { item: TodoItem }) {
 
     return (
         <Card
-            className={classnames(classes.root, {
+            className={classnames( {
                 [classes.doneRoot]: item.done,
             })}
         >

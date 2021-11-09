@@ -20,7 +20,7 @@ export default function TodoItemForm() {
         <form
             onSubmit={handleSubmit((formData: TodoFormData) => {
 
-                dispatch({ type: TodoActionTypes.Add, data: { todoItem: formData } });
+                dispatch({ type: TodoActionTypes.Add, data: { todos: formData } });
                 reset({ title: '', details: '' });
             })}
         >

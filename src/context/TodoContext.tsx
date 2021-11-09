@@ -1,11 +1,14 @@
 import {createContext, ReactNode, useEffect, useReducer} from 'react'
-import {TodoActionTypes, TodoContextProviderValue} from '../types/todoTypes'
+import {TodoActionTypes, TodoContextProviderValue, TodoState} from '../types/todoTypes'
 import {todoReducer} from '../reducer/todoReducer'
 
 export const TodoContext = createContext<TodoContextProviderValue>(null);
 
-const defaultState = { todoItems: [] };
-const localStorageKey = 'todoListState';
+const defaultState: TodoState = {
+    todos: [] ,
+    doneTodos: [],
+};
+const localStorageKey = 'todos';
 
 export const TodoContextProvider = ({
                                              children,
@@ -16,6 +19,7 @@ export const TodoContextProvider = ({
 
     // @ts-ignore
     window.state = state
+
     useEffect(() => {
         const savedState = localStorage.getItem(localStorageKey);
 
