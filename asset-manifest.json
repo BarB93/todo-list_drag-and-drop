@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/todo-list_drag-and-drop/static/css/main.b67bd49d.chunk.css",
+    "main.js": "/todo-list_drag-and-drop/static/js/main.82d850be.chunk.js",
+    "main.js.map": "/todo-list_drag-and-drop/static/js/main.82d850be.chunk.js.map",
+    "runtime-main.js": "/todo-list_drag-and-drop/static/js/runtime-main.cd02adff.js",
+    "runtime-main.js.map": "/todo-list_drag-and-drop/static/js/runtime-main.cd02adff.js.map",
+    "static/js/2.e52ecf15.chunk.js": "/todo-list_drag-and-drop/static/js/2.e52ecf15.chunk.js",
+    "static/js/2.e52ecf15.chunk.js.map": "/todo-list_drag-and-drop/static/js/2.e52ecf15.chunk.js.map",
+    "static/js/3.5b557672.chunk.js": "/todo-list_drag-and-drop/static/js/3.5b557672.chunk.js",
+    "static/js/3.5b557672.chunk.js.map": "/todo-list_drag-and-drop/static/js/3.5b557672.chunk.js.map",
+    "index.html": "/todo-list_drag-and-drop/index.html",
+    "static/css/main.b67bd49d.chunk.css.map": "/todo-list_drag-and-drop/static/css/main.b67bd49d.chunk.css.map",
+    "static/js/2.e52ecf15.chunk.js.LICENSE.txt": "/todo-list_drag-and-drop/static/js/2.e52ecf15.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cd02adff.js",
+    "static/js/2.e52ecf15.chunk.js",
+    "static/css/main.b67bd49d.chunk.css",
+    "static/js/main.82d850be.chunk.js"
+  ]
+}
