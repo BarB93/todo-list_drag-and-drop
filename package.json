@@ -31,12 +31,54 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "eslint": "eslint src/",
+    "fix": "eslint src/ --fix",
+    "precommit": "lint-staged",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "prettier"
+    ],
+    "rules": {
+      "no-debugger": "error",
+      "jsx-quotes": [
+        "error",
+        "prefer-single"
+      ],
+      "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "semi": [
+        "error",
+        "never"
+      ]
+    },
+    "plugins": [
+      "prettier"
+    ],
+    "overrides": [
+      {
+        "files": ["**/*.ts?(x)"],
+        "parser": "@typescript-eslint/parser",
+        "rules": {
+          "no-debugger": "error",
+          "jsx-quotes": ["error", "prefer-single"],
+          "quotes": ["error", "single",
+            {
+              "avoidEscape": true
+            }
+          ],
+          "semi": ["error", "never"]
+        }
+      }
     ]
   },
   "browserslist": {
@@ -52,6 +94,19 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "@typescript-eslint/parser": "^5.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "gh-pages": "^3.2.3",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.4.1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "node_modules/.bin/eslint --max-warnings=0",
+      "prettier --write"
+    ]
   }
 }
