@@ -45,10 +45,7 @@
     ],
     "rules": {
       "no-debugger": "error",
-      "jsx-quotes": [
-        "error",
-        "prefer-single"
-      ],
+      "jsx-quotes": ["error", "prefer-single"],
       "quotes": [
         "error",
         "single",
@@ -56,10 +53,7 @@
           "avoidEscape": true
         }
       ],
-      "semi": [
-        "error",
-        "never"
-      ]
+      "semi": ["error", "never"]
     },
     "plugins": [
       "prettier"
@@ -69,6 +63,7 @@
         "files": ["**/*.ts?(x)"],
         "parser": "@typescript-eslint/parser",
         "rules": {
+          "no-console": "error",
           "no-debugger": "error",
           "jsx-quotes": ["error", "prefer-single"],
           "quotes": ["error", "single",
@@ -105,8 +100,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "node_modules/.bin/eslint --max-warnings=0",
-      "prettier --write"
+      "prettier --write",
+      "node_modules/.bin/eslint --max-warnings=0"
     ]
   }
 }
